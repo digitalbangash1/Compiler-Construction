@@ -1,0 +1,10 @@
+/*Test_Case_2 Assert*/
+
+n=5; result=1;
+while(n!=0) {
+    prev_result=result;
+    result=result*n;
+    output result;
+    DEBUG: [Assert] -> prev_result<result;
+    n=n-1;
+}

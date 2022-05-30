@@ -1,0 +1,10 @@
+/* Monitor debugger test with assert debugger: Test_Case_3 */
+n=5; result=1;
+
+DEBUG: [Monitor] -> result;
+while(n!=0){
+    prev_result=result;
+    result=result*n;
+    DEBUG: [Assert] -> prev_result<result;
+    n=n-1;
+}

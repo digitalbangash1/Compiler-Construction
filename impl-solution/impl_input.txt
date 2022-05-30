@@ -1,0 +1,8 @@
+/*Test_case_1  Breakpoint*/
+n=5; result=1;
+while(n!=0) {
+    result=result*n;
+    output result;
+    DEBUG: [Breakpoint] -> b;
+    n=n-1;
+}

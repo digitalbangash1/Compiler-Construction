@@ -1,0 +1,8 @@
+/*Trace debugger test: Test_Case_6 */
+n=4; k=2; result=1;
+DEBUG: [Trace];
+while(n!=k && k!=0) {
+    result=result*n/k;
+    n=n-1;
+    k=k-1;
+}

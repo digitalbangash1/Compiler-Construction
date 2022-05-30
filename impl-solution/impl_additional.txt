@@ -1,0 +1,155 @@
+/* Example program for impl that tests many the features required in
+the assignment */
+
+//Example program 1
+/*
+n=49;
+k=6;
+result=1;
+
+while(n!=k && k!=0){
+  result=result*n/k;
+  n=n-1;
+  k=k-1;
+}
+
+output result;
+*/
+
+//Example program 2
+/*
+n=100;
+
+for(i=2..n){
+  a[i]=1;
+}
+
+for(i=2..n){
+  if(a[i]==1){
+    output i;
+    j=2*i;
+    while(j<n){
+      a[j]=0;
+      j=j+i;
+    }
+  }
+}
+*/
+
+//Example Program 3
+/*
+
+
+n=5;
+result=1;
+
+while(n!=0){
+  result=result*n;
+  n=n+(-1);
+}
+
+output result;
+*/
+
+
+//The following are different test cases of the extended debug functionality.
+
+//Breakpoint debugger test: Test_Case_1
+/*
+n=5; result=1;
+while(n!=0) {
+    result=result*n;
+    output result;
+    DEBUG: [Breakpoint] -> b;
+    n=n-1;
+}
+*/
+
+//Assert debugger test: Test_Case_2
+/*
+n=5; result=1;
+while(n!=0) {
+    prev_result=result;
+    result=result*n;
+    output result;
+    DEBUG: [Assert] -> prev_result<result;;
+    n=n-1;
+}
+*/
+
+//Monitor debugger test with assert debugger: Test_Case_3
+/*
+n=5; result=1;
+
+DEBUG: [Monitor] -> result;
+while(n!=0){
+    prev_result=result;
+    result=result*n;
+    DEBUG: [Assert] -> prev_result<result;
+    n=n-1;
+}
+*/
+
+//Monitor debugger test with breakpoint debugger: Test_Case_4
+/*
+n=5; result=1;
+DEBUG: [Monitor] -> result;
+while(n!=0){
+    prev_result=result;
+    result=result*n;
+    DEBUG: [Breakpoint] -> b;
+    n=n-1;
+}
+*/
+
+
+//Three monitors debugger test: Test_Case_5
+/*
+n=49;
+k=6;
+result=1;
+
+DEBUG: [Monitor] -> n;
+DEBUG: [Monitor] -> k;
+DEBUG: [Monitor] -> result;
+
+while(n!=k && k!=0){
+  result=result*n/k;
+  n=n-1;
+  DEBUG: [Breakpoint] -> bp;
+  k=k-1;
+}
+
+output result;
+*/
+
+
+//Trace debugger test: Test_Case_6
+n=4; k=2; result=1;
+DEBUG: [Trace];
+while(n!=k && k!=0) {
+    result=result*n/k;
+    n=n-1;
+    k=k-1;
+}
+
+//Trace debugger for loop with if statement and nested while loop: Test_Case_7
+/*
+n=100;
+
+DEBUG: [Trace];
+for(i=2..n){
+  a[i]=1;
+}
+
+for(i=2..n){
+  if(a[i]==1){
+    output i;
+    j=2*i;
+    while(j<n){
+      a[j]=0;
+      j=j+i;
+    }
+  }
+}
+*/

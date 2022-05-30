@@ -1,0 +1,14 @@
+n=49;
+k=6;
+result=1;
+
+DEBUG: [Monitor] -> n;
+DEBUG: [Monitor] -> k;
+DEBUG: [Monitor] -> result;
+
+while(n!=k && k!=0){
+  result=result*n/k;
+  n=n-1;
+  DEBUG: [Breakpoint] -> bp;
+  k=k-1;
+}
